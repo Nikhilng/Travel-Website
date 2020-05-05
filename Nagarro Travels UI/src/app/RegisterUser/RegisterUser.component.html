@@ -1,0 +1,71 @@
+<div class="body">
+  <h2>Registration</h2><br>
+    <form (submit)="submit()" ngNativeValidate>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="First Name">First Name</label>
+              <input [(ngModel)]="empdetails.fname" type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Last Name">Last Name</label>
+              <input [(ngModel)]="empdetails.lname" type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="BuissnessUnit">Business Unit</label>
+              <input type="text" [(ngModel)]="empdetails.businessunit" class="form-control" id="businessunit" name="businessunit" placeholder="Business Unit" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Title">Title</label>
+              <input type="text" [(ngModel)]="empdetails.title" class="form-control" id="title" name="title" placeholder="Title" required>
+            </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" [(ngModel)]="empdetails.email" class="form-control" id="email" name="email" required placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Number">Telephone</label>
+            <input type="text" [(ngModel)]="empdetails.number" class="form-control" id="number" required name="number" placeholder="Mobile number" maxlength="15">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address 1</label>
+          <input type="text" [(ngModel)]="empdetails.address1" class="form-control" id="address1" name="address1" placeholder="Address" required>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" [(ngModel)]="empdetails.address2" class="form-control" id="address2" name="address2" placeholder="Alternate Address">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" [(ngModel)]="empdetails.city" class="form-control" id="city" name="city" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="state" [(ngModel)]="empdetails.state" class="form-control" name="state" required>
+              <option selected>Choose...</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Bangalore">Bangalore</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" [(ngModel)]="empdetails.zip" class="form-control" id="zip" name="zip" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="Country">Country</label>
+            <input type="text" [(ngModel)]="empdetails.country" class="form-control" id="country" name="country" placeholder="Country" required>
+          </div>
+        
+        <button type="submit" class="btn btn-primary" style="background-color: teal;width: 150px; ">Register</button>
+      </form>
+</div>
+

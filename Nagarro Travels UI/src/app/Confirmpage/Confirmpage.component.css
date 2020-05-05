@@ -1,0 +1,16 @@
+.body{
+	padding: 10px;
+	background-image: url(../../assets/confirm2.jpg);
+	background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: bold;
+}
+
+input,select{
+	color: black;
+	border: none;
+	background-color: rgba(0, 0, 0, 0.4);
+}

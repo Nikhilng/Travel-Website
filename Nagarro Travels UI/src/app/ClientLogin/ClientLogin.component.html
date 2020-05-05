@@ -1,0 +1,29 @@
+   <div class="sidenav" style="background-image: url(../../assets/home.jpg);">
+      <div class="login-main-text">
+         <h2>Nagarro Travel<br> Login Page</h2>
+         <p>Login or register</p>
+      </div>
+   </div>
+   <div class="main">
+      <div class="col-md-6 col-sm-12">
+         <div class="login-form">
+            <form (ngSubmit)="verify()" ngNativeValidate>
+               <div class="form-group">
+                  <label>User Name</label>
+                  <input class="form-control" type="text" id="username" name="username" placeholder="username" required>
+               </div>
+               <div class="form-group">
+                  <label>Password</label>
+                  <input class="form-control" type="password" id="password" name="password" placeholder="password" required>
+               </div>
+               <button type="submit" class="btn btn-black">Login</button><br><br>
+               <button [routerLink] = "['/Register']"  routerLinkActive="active" class="btn btn-secondary">Register</button>&nbsp;&nbsp;
+               <button [routerLink] = "['/forgotpassword']"  routerLinkActive="active" class="btn btn-secondary">Forgot Password</button>
+            </form>
+         </div>
+      </div>
+   </div>
+   
+  
+
+  

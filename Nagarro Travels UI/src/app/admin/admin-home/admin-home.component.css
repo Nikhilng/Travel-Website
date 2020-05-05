@@ -1,0 +1,35 @@
+h4{
+    margin-left:20px ;
+}
+#inputs{
+    background-color: rgb(192, 177, 177);
+    border: 2px solid black;
+    color: black;
+    margin-left: 20px;
+    width: 820px;
+}
+
+.adminhome{
+    background-image: url(../../../assets/adminhome.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-x:hidden;
+}
+h1{
+    text-align: center;
+}
+
+select{
+    width:500px;
+}
+
+#file{
+    background-color: rgb(192, 177, 177);
+    border: 2px solid black;
+    color: black;
+    margin-left: 20px;
+    width: 200px;
+}

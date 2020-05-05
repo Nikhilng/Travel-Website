@@ -1,0 +1,20 @@
+.confirm{
+    background-image: url(../../../assets/confirm.jpg);
+    background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5px;
+  overflow-x: hidden;
+  font-weight: bold;
+}
+
+input,select,textarea{
+    background-color: rgba(0, 0, 0, 0.3);
+    color: black;
+	border: none;
+}
+button{
+    background-color: teal;
+}

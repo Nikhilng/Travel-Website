@@ -1,0 +1,85 @@
+<div class="homeinside">
+<button class="button button1" [routerLink] = "['/home/ticket']"  routerLinkActive="active">Create Ticket</button>
+<button class="button button2" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1">View Ticket</button>
+<form (submit)="graph()" ngNativeValidate>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" id="destination" name="destination" [(ngModel)]="destination" placeholder="Destination Country" aria-label="Destination Country" aria-describedby="button-addon2" style="max-width: 20%;margin-left: 37%;" required>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit" id="button-addon2" data-toggle="modal" data-target=".bd-example-modal-lg">Button</button>
+    </div>
+  </div>
+  </form>
+  
+  
+<div *ngIf="destination" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<canvas baseChart
+[datasets]="barChartData"
+[labels]="barChartLabels"
+[options]="barChartOptions"
+[plugins]="barChartPlugins"
+[legend]="barChartLegend"
+[chartType]="barChartType">
+</canvas>
+ 
+</div>
+</div>
+</div>
+
+
+
+<div class="collapse multi-collapse" id="multiCollapseExample1">
+<div class="row">
+    <div class="col" *ngFor = "let ticket of tickets | paginate: {id: 'id',
+    itemsPerPage: 5,
+    currentPage: page,
+    totalItems: totalRecordes}">
+        <div class="card" style="background-color: rgba(221, 221, 221, 0.479);font-weight: bolder;" >
+            <div class="card-header">
+              {{ticket.project}}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Destination:<br> {{ticket.travelcity}}</h5>
+              <p class="card-text">Priority: {{ticket.priority}}</p>
+              <button class="btn btn-primary" (click)="populatedata(ticket)" data-toggle="modal" data-target="#exampleModalCenter">Show Details</button>
+            </div>
+          </div>
+      </div>
+    </div> 
+    <div class="pagination" style="margin-top: 15px;margin-left: 5%;">
+        <pagination-controls data-toggle="collapse" data-target=".multi-collapse" id = "id" maxSize="5" directionLinks="true" (pageChange) = "page = $event"></pagination-controls>
+      </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" *ngIf="data" style="background: linear-gradient(to bottom right,rgba(212, 212, 212, 0.904),rgba(170, 168, 168, 0.575)); font-weight: bolder;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">{{data.project}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="display: inline;">
+        Request Type:&nbsp;&nbsp;{{data.request}}<br>
+        From Location:&nbsp;&nbsp;{{data.fromloc}}<br>
+        Travel City:&nbsp;&nbsp;{{data.travelcity}}<br>
+        Start Date:&nbsp;&nbsp;{{data.startdate}}<br>
+          End Date:&nbsp;&nbsp;{{data.enddate}}<br>
+          Status:&nbsp;&nbsp;{{data.status}}<br>
+          Additional Info:&nbsp;&nbsp;{{data.info}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="edit(data)" class="btn btn-primary" data-dismiss="modal">Edit Ticket</button>
+          <button type="button" class="btn btn-primary" (click)="download(data.id)">Download Attachment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  </div>
+  
+  

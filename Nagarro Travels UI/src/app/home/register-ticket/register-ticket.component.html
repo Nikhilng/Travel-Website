@@ -1,0 +1,97 @@
+<div class="register">
+<h1 style="text-align: center;">Add Some Details</h1>
+<hr>
+
+    <form (submit)="onsubmit()" ngNativeValidate>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Request type">Request Type</label>
+                <select id ="request" [(ngModel)]="ticket.request" class="form-control" name="request" required>
+                    <option selected>Choose..</option>
+            <option value="travel">Travel</option>
+            <option value="hotelstay">Hotel Stay</option>
+            <option value="visa">Visa</option>
+            <option value="workpermit">WorkPermit</option>
+        </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Priority">Priority</label>
+        <select id="priority" [(ngModel)]="ticket.priority" class="form-control" name="priority">
+            <option selected>Choose</option>
+            <option value="Normal">Normal</option>
+            <option value="Urgent">Urgent</option>
+            <option value="Immediate">Immediate</option>
+        </select>
+            </div>
+            
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Travel City">Travel City</label>
+        <select class="form-control" [(ngModel)]="ticket.travelcity" id="travelcity" name="travelcity">
+            <option selected>Choose</option>
+            <option value="delhi">Delhi</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="chennai">Chennai</option>
+            <option value="bangalore">Bangalore</option>
+        </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="From Location">From Location</label>&nbsp;&nbsp;
+        <select class="form-control" [(ngModel)]="ticket.fromloc" id ="fromloc" name="fromloc">
+            <option selected>Choose</option>
+            <option value="travel">Delhi</option>
+            <option value="hotelstay">Gurugram</option>
+            <option value="visa">Banglore</option>
+            <option value="workpermit">Jaipur</option>
+        </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Start Date">Start Date</label>&nbsp;&nbsp;
+        <input  class="form-control" [(ngModel)]="ticket.startdate" type="date"  id="startdate" name="startdate">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="End Date">End Date</label>
+        <input class="form-control" [(ngModel)]="ticket.enddate" type="date" id="enddate" name="enddate">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Passport Number" aria-required="true">Passport Number</label>
+                <input class="form-control" [(ngModel)]="ticket.passport" type="text" id="passport" name="passport" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Project Name">Project Name</label>&nbsp;&nbsp;
+                <input class="form-control" [(ngModel)]="ticket.project" type="text" id="project" name="project" required>
+            </div>
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Expense Borne</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="ticket.nagcli" type="radio" name="nagcli" id="nagarro" value="nagarro" checked>
+                  <label class="form-check-label" for="Nagarro">
+                    Nagarro
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="ticket.nagcli" type="radio" name="nagcli" id="client" value="client">
+                  <label class="form-check-label" for="Client">
+                    Client
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-row">
+            <div class="form-group col-md-12" style="text-align: center;">
+                <label for="Any Additional Details">Any Additional Details</label>
+                <textarea class="form-control" [(ngModel)]="ticket.otherinfo" type="text" id="otherinfo" name="otherinfo"></textarea>
+                </div>
+            </div>       
+        <button class="btn btn-primary" type="submit" style="margin-left:45%;width: 14%;background-color: teal;">Submit</button>
+    </form>
+</div>
